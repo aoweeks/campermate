@@ -20,8 +20,8 @@ import { DataProvider } from '../../providers/data/data';
 	387
 	
 	constructor(public navCtrl: NavController, public maps: GoogleMapsProvider,
-		public platform: Platform, public dataService: DataProvider, public
-		alertCtrl: AlertController, public geolocation: Geolocation) {
+		public platform: Platform, public dataService: DataProvider,
+		public alertCtrl: AlertController, public geolocation: Geolocation) {
 	}
 	
 	ionViewDidLoad(): void {
