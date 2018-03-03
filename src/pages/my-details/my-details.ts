@@ -17,8 +17,18 @@ import { DataProvider } from '../../providers/data/data';
 })
 export class MyDetailsPage {
 
+  myDetailsForm: FormGroup;
+
   constructor(public navCtrl: NavController, public formBuilder: FormBuilder,
   	public dataService: DataProvider) {
+  
+  	this.myDetailsForm = formBuilder.group({
+		carRegistration: [''],
+		trailerRegistration: [''],
+		trailerDimensions: [''],
+		phoneNumber: [''],
+		notes: ['']
+	});
   }
 
   saveForm(): void{
