@@ -1,8 +1,34 @@
 import { Injectable } from '@angular/core';
+import { Network } from '@ionic-native/network';
+import { Platform } from 'ionic-angular';
+import { Observable } from 'rxjs/Observable';
+
+declare var Connection;
 
 @Injectable()
 export class ConnectivityProvider {
-	constructor() {
-		console.log('Hello Connectivity Provider');
+	
+	onDevice: boolean;
+
+	constructor(public platform: Platform, public network: Network) {
+		this.onDevice = this.platform.is('cordova');
+	}
+
+
+
+	isOnline(): boolean {
+
+	}
+
+	ifOffline(): boolean {
+
+	}
+
+	watchOnline(): any {
+
+	}
+
+	watchOffline(): any{
+		
 	}
 }
