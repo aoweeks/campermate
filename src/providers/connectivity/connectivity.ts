@@ -14,21 +14,27 @@ export class ConnectivityProvider {
 		this.onDevice = this.platform.is('cordova');
 	}
 
-
-
 	isOnline(): boolean {
-
+		if(this.onDevice && this.network.type){
+			return this.network.type != 'none';
+		} else {
+			return navigator.onLine;
+		}
 	}
 
-	ifOffline(): boolean {
-
+	isOffline(): boolean {
+		if(this.onDevice && this.network.type){
+			return this.network.type == 'none';
+		} else {
+			return !navigator.onLine;
+		}
 	}
 
 	watchOnline(): any {
-
+		return this.network.onConnect();
 	}
 
-	watchOffline(): any{
-		
+	watchOffline(): any {
+		return this.network.onDisconnect();
 	}
 }
